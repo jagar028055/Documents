@@ -1,0 +1,104 @@
+{
+  "endpoints": {
+    "i2i-kamui-fal-nano-banana-pro-edit": {
+      "type": "http",
+      "url": "https://kamui-code.ai/i2i/fal/nano-banana-pro/edit",
+      "description": "Nano Banana Pro Edit - Gemini 2.5 Flash Image model for intelligent image editing. Edit images using text prompts with support for multiple input images. Supports customizable parameters including prompt, image URLs, number of images, aspect ratio (auto, 21:9, 16:9, 3:2, 4:3, 5:4, 1:1, 4:5, 3:4, 2:3, 9:16), output format (jpeg, png, webp), sync mode, and limit generations. Perfect for image editing, style transfer, and creative image manipulation via Kamui Code ⭐⭐⭐",
+      "headers": {
+        "KAMUI-CODE-PASS": "kamui-pass-2025-7568"
+      },
+      "method": "POST",
+      "parameters": {
+        "prompt": {
+          "type": "string",
+          "required": true,
+          "description": "Text prompt describing the desired edit"
+        },
+        "image_url": {
+          "type": "string",
+          "required": true,
+          "description": "URL of the image to edit"
+        },
+        "image_url2": {
+          "type": "string",
+          "required": false,
+          "description": "Optional second image URL for complex edits"
+        },
+        "num_images": {
+          "type": "integer",
+          "default": 1,
+          "min": 1,
+          "max": 4,
+          "description": "Number of images to generate"
+        },
+        "aspect_ratio": {
+          "type": "string",
+          "enum": ["auto", "21:9", "16:9", "3:2", "4:3", "5:4", "1:1", "4:5", "3:4", "2:3", "9:16"],
+          "default": "auto",
+          "description": "Aspect ratio of the output image"
+        },
+        "output_format": {
+          "type": "string",
+          "enum": ["jpeg", "png", "webp"],
+          "default": "webp",
+          "description": "Output image format"
+        },
+        "sync_mode": {
+          "type": "boolean",
+          "default": false,
+          "description": "Whether to run in synchronous mode"
+        },
+        "limit_generations": {
+          "type": "boolean",
+          "default": false,
+          "description": "Whether to limit generations"
+        }
+      }
+    },
+    "t2i-kamui-fal-nano-banana-pro": {
+      "type": "http",
+      "url": "https://kamui-code.ai/t2i/fal/nano-banana-pro",
+      "description": "Nano Banana Pro Text-to-Image - Gemini 2.5 Flash Image model for high-quality image generation. Generate images from text prompts with support for customizable parameters including prompt, number of images, aspect ratio (21:9, 16:9, 3:2, 4:3, 5:4, 1:1, 4:5, 3:4, 2:3, 9:16), output format (jpeg, png, webp), sync mode, and limit generations. Perfect for creative image generation, concept art, and visual content creation via Kamui Code ⭐⭐⭐",
+      "headers": {
+        "KAMUI-CODE-PASS": "kamui-pass-2025-7568"
+      },
+      "method": "POST",
+      "parameters": {
+        "prompt": {
+          "type": "string",
+          "required": true,
+          "description": "Text prompt describing the image to generate"
+        },
+        "num_images": {
+          "type": "integer",
+          "default": 1,
+          "min": 1,
+          "max": 4,
+          "description": "Number of images to generate"
+        },
+        "aspect_ratio": {
+          "type": "string",
+          "enum": ["21:9", "16:9", "3:2", "4:3", "5:4", "1:1", "4:5", "3:4", "2:3", "9:16"],
+          "default": "1:1",
+          "description": "Aspect ratio of the output image"
+        },
+        "output_format": {
+          "type": "string",
+          "enum": ["jpeg", "png", "webp"],
+          "default": "webp",
+          "description": "Output image format"
+        },
+        "sync_mode": {
+          "type": "boolean",
+          "default": false,
+          "description": "Whether to run in synchronous mode"
+        },
+        "limit_generations": {
+          "type": "boolean",
+          "default": false,
+          "description": "Whether to limit generations"
+        }
+      }
+    }
+  }
+}
